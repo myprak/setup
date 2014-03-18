@@ -2,6 +2,14 @@
 # Simple setup.sh for configuring Ubuntu 12.04 LTS EC2 instance
 # for headless setup. 
 
+#Sort out locale errors in EC2 
+cd $HOME
+export LANGUAGE=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+sudo locale-gen en_US.UTF-8
+sudo dpkg-reconfigure locales
+
 # Install nvm: node-version manager
 # https://github.com/creationix/nvm
 sudo apt-get install -y git
@@ -45,11 +53,3 @@ ln -sb dotfiles/.bash_profile .
 ln -sb dotfiles/.bashrc .
 ln -sb dotfiles/.bashrc_custom .
 ln -sf dotfiles/.emacs.d .
-
-#Sort out locale errors in EC2 
-cd $HOME
-export LANGUAGE=en_US.UTF-8
-export LANG=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
-sudo locale-gen en_US.UTF-8
-sudo dpkg-reconfigure locales
