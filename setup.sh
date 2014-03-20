@@ -1,5 +1,5 @@
 #!/bin/bash
-# Simple setup.sh for configuring Ubuntu 12.04 LTS EC2 instance
+1;2c# Simple setup.sh for configuring Ubuntu 12.04 LTS EC2 instance
 # for headless setup. 
 
 #Sort out locale errors in EC2 
@@ -65,3 +65,13 @@ ln -sb dotfiles/.bash_profile .
 ln -sb dotfiles/.bashrc .
 ln -sb dotfiles/.bashrc_custom .
 ln -sf dotfiles/.emacs.d .
+
+#Install Grunt and Twitter Bootstrap for RWD, plus Bower as package manager
+cd $HOME
+sudo npm install -g grunt-cli
+sudo npm install -g bower
+git clone http://github.com/twbs/bootstrap.git
+cd bootstrap/
+npm install
+bower install bootstrap
+# first time running bower have to answer log reporting questioncase 
