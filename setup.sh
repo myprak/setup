@@ -1,5 +1,5 @@
 #!/bin/bash
-1;2c# Simple setup.sh for configuring Ubuntu 12.04 LTS EC2 instance
+# Simple setup.sh for configuring Ubuntu 12.04 LTS EC2 instance
 # for headless setup. 
 
 #Sort out locale errors in EC2 
@@ -27,15 +27,20 @@ curl https://raw.github.com/creationix/nvm/master/install.sh | sh
 
 # Load nvm and install latest production node
 source $HOME/.nvm/nvm.sh
-nvm install v0.10.12
-nvm use v0.10.12
+sudo nvm install v0.10.12
+sudo nvm use v0.10.12
 
 # Install jshint to allow checking of JS code within emacs
 # http://jshint.com/
 sudo npm install -g jshint
 
 #Install npm express web development framework
-npm install express
+sudo npm install express
+
+#Install new node libraries
+sudo npm install cheerio
+sudo npm install commander
+sudo npm install restler
 
 # Install rlwrap to provide libreadline features with node
 # See: http://nodejs.org/api/repl.html#repl_repl
@@ -72,6 +77,6 @@ sudo npm install -g grunt-cli
 sudo npm install -g bower
 git clone http://github.com/twbs/bootstrap.git
 cd bootstrap/
-npm install
+sudo npm install
 bower install bootstrap
 # first time running bower have to answer log reporting questioncase 
