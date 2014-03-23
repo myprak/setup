@@ -70,6 +70,7 @@ ln -sb dotfiles/.screenrc .
 ln -sb dotfiles/.bash_profile .
 ln -sb dotfiles/.bashrc .
 ln -sb dotfiles/.bashrc_custom .
+ln -sb dotfiles/.jshintrc
 ln -sf dotfiles/.emacs.d .
 
 #Install Grunt and Twitter Bootstrap for RWD, plus Bower as package manager
