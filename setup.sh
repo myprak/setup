@@ -42,6 +42,7 @@ sudo npm install cheerio
 sudo npm install commander
 sudo npm install restler
 sudo npm install request
+sudo npm install underscore
 
 # Install rlwrap to provide libreadline features with node
 # See: http://nodejs.org/api/repl.html#repl_repl
