@@ -82,4 +82,12 @@ git clone http://github.com/twbs/bootstrap.git
 cd bootstrap/
 sudo npm install
 bower install bootstrap
-# first time running bower have to answer log reporting questioncase 
+# first time running bower have to answer log reporting question case 
+
+
+
+#Install Postgres
+sudo apt-get install -y postgresql postgresql-contrib
+
+#Install Virtualenvwrapper
+sudo apt-get install -y virtualenvwrapper
