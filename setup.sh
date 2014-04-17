@@ -10,8 +10,34 @@ export LC_ALL=en_US.UTF-8
 sudo locale-gen en_US.UTF-8
 sudo dpkg-reconfigure locales
 
-# Install python
+# Get ready for update
 sudo apt-get update
+
+
+# -----Basic module----
+
+# Git and curl
+sudo apt-get install -y git
+sudo apt-get install -y curl
+sudo apt-get install -y cmake
+
+# Install emacs24
+# https://launchpad.net/~cassou/+archive/emacs
+sudo add-apt-repository -y ppa:cassou/emacs
+sudo apt-get -qq update
+sudo apt-get install -y emacs24-nox emacs24-el emacs24-common-non-dfsg
+
+# OpencCV
+cd $HOME
+#git clone https://github.com/Itseez/opencv.git -b 2.4
+#md opencv_bin
+#cd opencv_bin
+#cmake 
+
+
+# -----Crawler module-------
+
+# Install python
 sudo apt-get install -y python-software-properties python g++ make
 sudo apt-get install -y python-dev libxml2-dev libxslt1-dev
 sudo apt-get install -y --force-yes python-pip
@@ -24,9 +50,20 @@ sudo apt-get install -y tesseract-ocr tesseract-ocr-eng
 # Install tesseract python wrapper
 cd $HOME
 wget http://python-tesseract.googlecode.com/files/python-tesseract_0.7-1.4_amd64.deb
-sudo apt-get -f install
 sudo dpkg -i python-tesseract*.deb
+sudo apt-get -f install
 
+#Install Postgres
+sudo apt-get install -y postgresql postgresql-contrib
+
+#Install Virtualenvwrapper
+sudo apt-get install -y virtualenvwrapper
+
+
+ 
+
+
+# -----Web server module------
 
 # install nodejs
 sudo add-apt-repository -y ppa:chris-lea/node.js
@@ -35,14 +72,12 @@ sudo apt-get install -y nodejs
 
 # Install nvm: node-version manager
 # https://github.com/creationix/nvm
-sudo apt-get install -y git
-sudo apt-get install -y curl
 curl https://raw.github.com/creationix/nvm/master/install.sh | sh
-
+ 
 # Load nvm and install latest production node
 source $HOME/.nvm/nvm.sh
-sudo nvm install v0.10.12
-sudo nvm use v0.10.12
+nvm install v0.10.12
+nvm use v0.10.12
 
 # Install jshint to allow checking of JS code within emacs
 # http://jshint.com/
@@ -62,15 +97,24 @@ sudo npm install underscore
 # See: http://nodejs.org/api/repl.html#repl_repl
 sudo apt-get install -y rlwrap
 
-# Install emacs24
-# https://launchpad.net/~cassou/+archive/emacs
-sudo add-apt-repository -y ppa:cassou/emacs
-sudo apt-get -qq update
-sudo apt-get install -y emacs24-nox emacs24-el emacs24-common-non-dfsg
 
 # Install Heroku toolbelt
 # https://toolbelt.heroku.com/debian
-wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+sudo wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+
+#Install Grunt and Twitter Bootstrap for RWD, plus Bower as package manager
+cd $HOME
+sudo npm install -g grunt-cli
+sudo npm install -g bower
+git clone http://github.com/twbs/bootstrap.git
+cd bootstrap/
+sudo npm install
+bower install --config.interactive=false bootstrap
+#first time running bower have to answer log reporting question case 
+ 
+
+
+#-------Basic Module End--------
 
 # git pull and install dotfiles as well
 cd $HOME
@@ -87,21 +131,3 @@ ln -sb dotfiles/.bashrc .
 ln -sb dotfiles/.bashrc_custom .
 ln -sb dotfiles/.jshintrc
 ln -sf dotfiles/.emacs.d .
-
-#Install Grunt and Twitter Bootstrap for RWD, plus Bower as package manager
-cd $HOME
-sudo npm install -g grunt-cli
-sudo npm install -g bower
-git clone http://github.com/twbs/bootstrap.git
-cd bootstrap/
-sudo npm install
-bower install --config.interactive=false bootstrap
-# first time running bower have to answer log reporting question case 
-
-
-
-#Install Postgres
-sudo apt-get install -y postgresql postgresql-contrib
-
-#Install Virtualenvwrapper
-sudo apt-get install -y virtualenvwrapper
