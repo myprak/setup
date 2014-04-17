@@ -13,7 +13,12 @@ sudo dpkg-reconfigure locales
 # Install python
 sudo apt-get update
 sudo apt-get install -y python-software-properties python g++ make
-sudo pip install lxml scrapy requests Pillow numpy
+sudo apt-get install -y python-dev libxml2-dev libxslt1-dev
+sudo pip install lxml
+sudo pip install scrapy
+sudo pip install requests
+sudo pip install Pillow
+sudo pip install numpy
 
 # Install tesseract
 sudo apt-get install -y tesseract-ocr tesseract-ocr-eng
@@ -86,7 +91,7 @@ sudo npm install -g bower
 git clone http://github.com/twbs/bootstrap.git
 cd bootstrap/
 sudo npm install
-bower install bootstrap
+bower install --config.interactive=false bootstrap
 # first time running bower have to answer log reporting question case 
 
 
