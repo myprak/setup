@@ -14,15 +14,18 @@ sudo dpkg-reconfigure locales
 sudo apt-get update
 sudo apt-get install -y python-software-properties python g++ make
 sudo apt-get install -y python-dev libxml2-dev libxslt1-dev
-sudo apt-get install --force-yes python-pip
-sudo pip install lxml
-sudo pip install scrapy
-sudo pip install requests
-sudo pip install Pillow
-sudo pip install numpy
+sudo apt-get install -y --force-yes python-pip
+sudo pip install lxml scrapy requests
+sudo pip install Pillow numpy
 
 # Install tesseract
 sudo apt-get install -y tesseract-ocr tesseract-ocr-eng
+
+# Install tesseract python wrapper
+cd $HOME
+wget http://python-tesseract.googlecode.com/files/python-tesseract_0.7-1.4_amd64.deb
+sudo apt-get -f install
+sudo dpkg -i python-tesseract*.deb
 
 
 # install nodejs
