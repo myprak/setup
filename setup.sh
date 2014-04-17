@@ -13,6 +13,11 @@ sudo dpkg-reconfigure locales
 # Install python
 sudo apt-get update
 sudo apt-get install -y python-software-properties python g++ make
+sudo pip install lxml scrapy requests Pillow
+
+# Install tesseract
+sudo apt-get install -y tesseract-ocr tesseract-ocr-eng
+
 
 # install nodejs
 sudo add-apt-repository -y ppa:chris-lea/node.js
