@@ -14,6 +14,7 @@ sudo dpkg-reconfigure locales
 sudo apt-get update
 sudo apt-get install -y python-software-properties python g++ make
 sudo apt-get install -y python-dev libxml2-dev libxslt1-dev
+sudo apt-get install --force-yes python-pip
 sudo pip install lxml
 sudo pip install scrapy
 sudo pip install requests
