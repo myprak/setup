@@ -27,13 +27,6 @@ sudo add-apt-repository -y ppa:cassou/emacs
 sudo apt-get -qq update
 sudo apt-get install -y emacs24-nox emacs24-el emacs24-common-non-dfsg
 
-# OpencCV
-cd $HOME
-#git clone https://github.com/Itseez/opencv.git -b 2.4
-#md opencv_bin
-#cd opencv_bin
-#cmake 
-
 
 # -----Crawler module-------
 
@@ -42,22 +35,41 @@ sudo apt-get install -y python-software-properties python g++ make
 sudo apt-get install -y python-dev libxml2-dev libxslt1-dev
 sudo apt-get install -y --force-yes python-pip
 sudo pip install lxml scrapy requests
-sudo pip install Pillow numpy
+sudo pip install Pillow
 
 # Install tesseract
 sudo apt-get install -y tesseract-ocr tesseract-ocr-eng
-
-# Install tesseract python wrapper
-cd $HOME
-wget http://python-tesseract.googlecode.com/files/python-tesseract_0.7-1.4_amd64.deb
-sudo dpkg -i python-tesseract*.deb
-sudo apt-get -f install
 
 #Install Postgres
 sudo apt-get install -y postgresql postgresql-contrib
 
 #Install Virtualenvwrapper
 sudo apt-get install -y virtualenvwrapper
+
+
+
+# #-----Computer Vision Module-------
+
+
+# # OpencCV
+# cd $HOME
+# git clone https://github.com/Itseez/opencv.git -b 2.4
+# md opencv_bin
+# cd opencv_bin
+# cmake -DCMAKE_BUILD_TYPE=RELEASE -DCMAKE_INSTALL_PREFIX=/usr/local -DWITH_OPENCL=ON -DBUILD_NEW_PYTHON_SUPPORT=ON -DINSTALL_PYTHON_EXAMPLES=ON ~/opencv
+# echo "Installing Dependenices"
+# sudo apt-get -qq install -y libopencv-dev build-essential checkinstall cmake pkg-config yasm libjpeg-dev libjasper-dev libavcodec-dev libavformat-dev libswscale-dev libdc1394-22-dev libxine-dev libgstreamer0.10-dev libgstreamer-plugins-base0.10-dev libv4l-dev python-dev python-numpy libtbb-dev libqt4-dev libgtk2.0-dev libfaac-dev libmp3lame-dev libopencore-amrnb-dev libopencore-amrwb-dev libtheora-dev libvorbis-dev libxvidcore-dev x264 v4l-utils ffmpeg
+# make
+# sudo make install
+
+# sudo pip install numpy
+
+
+# # Install tesseract python wrapper
+# cd $HOME
+# wget http://python-tesseract.googlecode.com/files/python-tesseract_0.7-1.4_amd64.deb
+# sudo dpkg -i python-tesseract*.deb
+# sudo apt-get -f install
 
 
  
