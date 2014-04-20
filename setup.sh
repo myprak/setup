@@ -46,6 +46,9 @@ sudo apt-get install -y postgresql postgresql-contrib
 #Install Virtualenvwrapper
 sudo apt-get install -y virtualenvwrapper
 
+# Python SQL 
+sudo pip install SQLAlchemy
+sudo apt-get install -y python-psycopg2
 
 
 # #-----Computer Vision Module-------
