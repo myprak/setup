@@ -1,21 +1,11 @@
 #!/bin/bash
-# Simple setup.sh for configuring Ubuntu 12.04 LTS EC2 instance
+# Simple setup.sh for configuring Ubuntu 14.04 LTS EC2 instance
 # for headless setup. 
-
-#Sort out locale errors in EC2 
-cd $HOME
-export LANGUAGE=en_US.UTF-8
-export LANG=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
-sudo locale-gen en_US.UTF-8
-sudo dpkg-reconfigure locales
 
 # Get ready for update
 sudo apt-get update
 
-
 # -----Basic module----
-
 # Git and curl
 sudo apt-get install -y git
 sudo apt-get install -y curl
@@ -27,15 +17,31 @@ sudo add-apt-repository -y ppa:cassou/emacs
 sudo apt-get -qq update
 sudo apt-get install -y emacs24-nox emacs24-el emacs24-common-non-dfsg
 
-
-# -----Crawler module-------
-
 # Install python
 sudo apt-get install -y python-software-properties python g++ make
-sudo apt-get install -y python-dev libxml2-dev libxslt1-dev
+sudo apt-get install -y python-dev libxml2-dev libxslt1-dev libxslt1.1 libxml2 libssl-dev
 sudo apt-get install -y --force-yes python-pip
-sudo pip install lxml scrapy requests
+
+
+# Install crawler
+sudo pip install lxml scrapy requests w3lib cssselect
 sudo pip install Pillow
+
+
+
+#Sort out locale errors in EC2 
+cd $HOME
+export LANGUAGE=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+sudo locale-gen en_US.UTF-8
+sudo dpkg-reconfigure locales
+
+
+
+
+
+
 
 # Install tesseract
 sudo apt-get install -y tesseract-ocr tesseract-ocr-eng
