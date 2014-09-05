@@ -17,17 +17,11 @@ sudo add-apt-repository -y ppa:cassou/emacs
 sudo apt-get -qq update
 sudo apt-get install -y emacs24-nox emacs24-el emacs24-common-non-dfsg
 
-# Install python
-sudo apt-get install python-scrapy
-sudo apt-get install -y --force-yes python-pip
-
-#sudo apt-get install -y python-software-properties python g++ make
-#sudo apt-get install -y python-dev libxml2-dev libxslt1-dev libxslt1.1 libxml2 libssl-dev
-
-
 # Install crawler
-#sudo pip install lxml scrapy requests w3lib cssselect
-sudo pip install Pillow
+sudo apt-get install -y python-scrapy
+sudo apt-get install -y --force-yes python-pip
+sudo apt-get install -y python-software-properties
+#sudo apt-get install -y python-dev libxml2-dev libxslt1-dev libxslt1.1 libxml2 libssl-dev
 
 #Install Postgres
 sudo apt-get install -y postgresql postgresql-contrib
