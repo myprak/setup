@@ -32,6 +32,10 @@ sudo apt-get install -y postgresql postgresql-contrib
 sudo pip install SQLAlchemy
 sudo apt-get install -y python-psycopg2
 
+# Python validate emails
+sudo pip install validate_email
+sudo pip install pyDNS
+
 # Install tesseract
 sudo apt-get install -y tesseract-ocr tesseract-ocr-eng
 
