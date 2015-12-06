@@ -1,8 +1,17 @@
 #!/bin/bash
-# Simple setup.sh for configuring Ubuntu 12.04 LTS EC2 instance
+# Simple setup.sh for configuring Amazon EC2 instance
 # for headless setup. 
 
 #Sort out locale errors in EC2 
+
+#Add these
+#/etc/environment
+#LANG=en_US.utf-8
+#LC_ALL=en_US.utf-8
+
+#yum update
+
+
 cd $HOME
 export LANGUAGE=en_US.UTF-8
 export LANG=en_US.UTF-8
